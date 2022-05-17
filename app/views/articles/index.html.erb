@@ -1,0 +1,17 @@
+<h1>Wikinimous</h1>
+<div class="container">
+  <h2>Articles</h2>
+    <div class="article-list">
+      <ul>
+        <% @articles.each do |article|%>
+          <li><%= link_to article.name, article_path(article)%> - <%= link_to "Delete",
+            article_path(article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+          <% end %>
+      </ul>
+    </div>
+    <div class="create">
+      <p><%= link_to "add a new article", new_article_path%></p>
+    </div>
+</div>
